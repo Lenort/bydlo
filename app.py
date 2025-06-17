@@ -124,11 +124,11 @@ HTML_PAGE = '''
       addMessage(text, 'user');
       input.value = '';
       showTyping(true);
-      fetch('/ask', {
-        method: 'POST',
-        headers: {'Content-Type':'application/json'},
-        body: JSON.stringify({message: text})
-      }).then(r => r.json()).then(data => {
+    fetch('https://bydlo.onrender.com/ask', {
+  method: 'POST',
+  headers: {'Content-Type':'application/json'},
+  body: JSON.stringify({message: text})
+  }).then(r => r.json()).then(data => {
         addMessage(data.response || 'Ошибка ответа', 'bot');
       }).catch(e => addMessage('Ошибка сети', 'bot')).finally(() => showTyping(false));
     }
