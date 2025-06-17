@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: byglo-gpt
+    name: bydlo-gpt
     env: python
     plan: free
     buildCommand: "pip install -r requirements.txt"
